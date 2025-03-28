@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Smart Vacuum Cleaner Robot - Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-gold">Arduino Robot</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-gold transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors">About</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold transition-colors">Technical</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-gold transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gold">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-lg">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-300 hover:text-gold transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors">About</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold transition-colors">Technical</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-gold transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Development Roadmap -->
+    <section id="roadmap" class="pt-32 pb-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold">Development Roadmap</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold text-gold">Phase 1: Foundation</h3>
+                            <p class="text-gray-300">Basic hardware setup and core functionality implementation</p>
+                            <ul class="list-disc list-inside text-gray-300 mt-2">
+                                <li>Hardware assembly and testing</li>
+                                <li>Basic movement control</li>
+                                <li>Initial obstacle detection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold text-gold">Phase 2: Enhancement</h3>
+                            <p class="text-gray-300">Advanced features and optimization</p>
+                            <ul class="list-disc list-inside text-gray-300 mt-2">
+                                <li>Smart navigation system implementation</li>
+                                <li>Improved navigation algorithms</li>
+                                <li>Battery optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold text-gold">Phase 3: Integration</h3>
+                            <p class="text-gray-300">Smart home integration and mobile app development</p>
+                            <ul class="list-disc list-inside text-gray-300 mt-2">
+                                <li>Mobile app development</li>
+                                <li>Smart home connectivity</li>
+                                <li>Remote control features</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold text-gold">Phase 4: Future Enhancements</h3>
+                            <p class="text-gray-300">Advanced features and commercial viability</p>
+                            <ul class="list-disc list-inside text-gray-300 mt-2">
+                                <li>AI-powered cleaning patterns</li>
+                                <li>Multi-room mapping</li>
+                                <li>Commercial production planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Case Study -->
+    <section id="case-study" class="py-20 bg-black/50 backdrop-blur-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold">Project Case Study</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gold">Challenges & Solutions</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 1: Obstacle Detection</h4>
+                            <p class="text-gray-300">Implementing reliable obstacle detection in various lighting conditions and with different types of obstacles.</p>
+                            <p class="text-gray-300 mt-2">Solution: Combined multiple ultrasonic sensors with advanced filtering algorithms to improve detection accuracy.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 2: Battery Life</h4>
+                            <p class="text-gray-300">Optimizing power consumption while maintaining cleaning efficiency.</p>
+                            <p class="text-gray-300 mt-2">Solution: Implemented smart power management system and efficient cleaning patterns.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 3: Smart Navigation</h4>
+                            <p class="text-gray-300">Developing efficient navigation patterns for optimal room coverage.</p>
+                            <p class="text-gray-300 mt-2">Solution: Implemented advanced path planning algorithms and room mapping techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
