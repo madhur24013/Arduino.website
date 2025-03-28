@@ -888,3 +888,4 @@ gsap.to('.gold-gradient', {
     repeat: -1,
     ease: 'none'
 }); 
+lazyImages.forEach(img => imageObserver.observe(img)); 
