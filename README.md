@@ -1,17 +1,24 @@
-# Smart Vacuum Cleaner Robot Website
+# Arduino Smart Vacuum Cleaner Robot
 
-A modern, responsive website showcasing an Arduino-based Smart Vacuum Cleaner Robot project. The website features interactive elements, animations, and detailed information about the robot's capabilities.
+A modern, responsive website showcasing an Arduino-based smart vacuum cleaner robot project. The website features interactive elements, animations, and a comprehensive documentation of the project.
 
 ## Features
 
-- 🧹 Smart Navigation System
-- 🎤 Voice Control Integration
-- 📱 Wireless Control Interface
-- 🔍 Obstacle Detection
-- 📊 Performance Analytics
-- 🎯 Project Showcase
-- 📝 Technical Documentation
-- 📸 Project Gallery
+- Responsive design that works on all devices
+- Interactive timeline showing project development phases
+- Image gallery with lightbox functionality
+- Contact form for inquiries
+- Modern UI with glassmorphism effects
+- Dynamic particle background
+- Smooth animations and transitions
+
+## Pages
+
+1. **Home** - Overview of the project
+2. **About** - Detailed information about the project
+3. **Technical** - Technical specifications and documentation
+4. **Gallery** - Project images and demonstrations
+5. **Contact** - Contact form for inquiries
 
 ## Technologies Used
 
@@ -21,25 +28,11 @@ A modern, responsive website showcasing an Arduino-based Smart Vacuum Cleaner Ro
 - Font Awesome Icons
 - Particles.js for background effects
 
-## Project Structure
-
-```
-smart-vacuum-robot/
-├── index.html          # Main homepage
-├── about.html          # About page
-├── technical.html      # Technical details
-├── gallery.html        # Project gallery
-├── contact.html        # Contact form
-├── styles.css          # Custom styles
-├── script.js           # Interactive features
-└── images/            # Project images
-```
-
-## Getting Started
+## Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/smart-vacuum-robot.git
+git clone https://github.com/madhur24013/smart-vacuum-robot.git
 ```
 
 2. Open `index.html` in your browser or use a local server:
@@ -49,25 +42,9 @@ python -m http.server 8000
 
 3. Visit `http://localhost:8000` in your browser
 
-## Development
-
-- The website uses Tailwind CSS for styling
-- Custom animations and effects are implemented in JavaScript
-- Responsive design works on all device sizes
-- Interactive features include:
-  - Smooth scrolling
-  - Dynamic navigation
-  - Form validation
-  - Image gallery
-  - Particle effects
-
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Feel free to submit issues and enhancement requests!
 
 ## License
 
@@ -77,4 +54,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
 
-Project Link: [https://github.com/YOUR_USERNAME/smart-vacuum-robot](https://github.com/YOUR_USERNAME/smart-vacuum-robot) 
+Project Link: [https://github.com/madhur24013/smart-vacuum-robot](https://github.com/madhur24013/smart-vacuum-robot) 
