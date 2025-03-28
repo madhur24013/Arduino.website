@@ -1,165 +1,8 @@
 /* Custom Colors */
 :root {
-    --primary: #FFD700;
-    --secondary: #2C3E50;
-    --accent: #E74C3C;
-    --background: #1A1A1A;
-    --text: #FFFFFF;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-}
-
-/* Base Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background);
-    color: var(--text);
-    overflow-x: hidden;
-    position: relative;
-    z-index: 1;
-}
-
-/* Navigation */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-/* Main Content */
-main {
-    position: relative;
-    z-index: 2;
-    padding-top: 80px; /* Add padding to account for fixed navbar */
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    z-index: 3;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(44, 62, 80, 0.9));
-}
-
-/* Particle Background */
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Tech Icons Background */
-.tech-icons-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Glass Cards */
-.glass-card {
-    position: relative;
-    z-index: 3;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Feature Cards */
-.feature-card {
-    position: relative;
-    z-index: 3;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Timeline */
-.timeline {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Gallery */
-.gallery {
-    position: relative;
-    z-index: 3;
-    padding: 2rem;
-}
-
-.gallery-item {
-    position: relative;
-    z-index: 3;
-    overflow: hidden;
-    border-radius: 15px;
-    margin: 1rem;
-}
-
-/* Lightbox */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Footer */
-footer {
-    position: relative;
-    z-index: 3;
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid var(--glass-border);
-    padding: 2rem;
-    text-align: center;
-}
-
-/* Scroll Progress Bar */
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    transform-origin: 0%;
-    z-index: 1001;
+    --gold: #FFD700;
+    --gold-dark: #B8860B;
+    --neon-gold: rgba(255, 215, 0, 0.5);
 }
 
 /* Tailwind Extensions */
@@ -1458,18 +1301,19 @@ body::after {
     width: 100%;
     height: 100%;
     z-index: 0;
-    opacity: 0.3;
+    opacity: 0.4;
     pointer-events: none;
 }
 
 .tech-icon {
     position: absolute;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--gold);
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
-                 0 0 20px rgba(255, 215, 0, 0.3);
-    animation: floatIcon 30s ease-in-out infinite;
-    opacity: 0.8;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7),
+                 0 0 30px rgba(255, 215, 0, 0.5),
+                 0 0 45px rgba(255, 215, 0, 0.3);
+    animation: floatIcon 25s ease-in-out infinite;
+    opacity: 0.9;
 }
 
 /* Animations */
@@ -1499,19 +1343,19 @@ body::after {
         opacity: 0;
     }
     5% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: translateY(80vh) rotate(45deg) scale(1);
     }
     45% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: translateY(20vh) rotate(180deg) scale(1);
     }
     55% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: translateY(20vh) rotate(180deg) scale(1);
     }
     95% {
-        opacity: 0.8;
+        opacity: 0.9;
         transform: translateY(-20vh) rotate(315deg) scale(1);
     }
     100% {
@@ -1522,21 +1366,21 @@ body::after {
 
 /* Add hover effect for icons */
 .tech-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: transform 0.3s ease;
 }
 
 /* Add staggered animation delays for smoother flow */
 .tech-icon:nth-child(3n) { animation-delay: 0s; }
-.tech-icon:nth-child(3n+1) { animation-delay: 1s; }
-.tech-icon:nth-child(3n+2) { animation-delay: 2s; }
+.tech-icon:nth-child(3n+1) { animation-delay: 0.5s; }
+.tech-icon:nth-child(3n+2) { animation-delay: 1s; }
 
 /* Ensure content remains visible */
 main, .glass-card, .feature-card, .tech-card, 
 .showcase-card, .testimonial-card, .case-study-card {
     position: relative;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: none;
 }
 
@@ -1550,17 +1394,16 @@ main, .glass-card, .feature-card, .tech-card,
         padding-right: 1rem;
     }
     .tech-icon {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 
-/* Add error handling for image loading */
-@media (max-width: 640px) {
-    img[src$="placeholder.jpg"] {
-        opacity: 0.5;
-        border: 1px solid #ccc;
-    }
-}
+// Add error handling for image loading
+document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() {
+        this.src = 'images/placeholder.jpg';
+    };
+});
 
 /* Add vendor prefixes */
 .glass-card {
@@ -1585,10 +1428,6 @@ main, .glass-card, .feature-card, .tech-card,
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
-    }
-    .tech-icon {
-        animation: none;
-        opacity: 0.5;
     }
 }
 

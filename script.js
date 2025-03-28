@@ -156,7 +156,8 @@ if (demoPrev && demoNext) {
 }
 
 // Gallery Hover Effect
-document.querySelectorAll('.gallery-item').forEach(item => {
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.querySelector('.gallery-overlay').style.transform = 'translateY(0)';
     });
@@ -750,11 +751,11 @@ if (lightbox && lightboxImage && closeLightbox && galleryItems) {
     });
 }
 
-// Initialize particles.js
+// Initialize Particles.js with optimized settings
 particlesJS('particles-js', {
     particles: {
         number: {
-            value: 30,
+            value: 30, // Reduced from 50
             density: {
                 enable: true,
                 value_area: 800
@@ -767,7 +768,7 @@ particlesJS('particles-js', {
             type: 'circle'
         },
         opacity: {
-            value: 0.2,
+            value: 0.2, // Reduced opacity
             random: true,
             animation: {
                 enable: true,
@@ -777,7 +778,7 @@ particlesJS('particles-js', {
             }
         },
         size: {
-            value: 3,
+            value: 2,
             random: true,
             animation: {
                 enable: true,
@@ -790,12 +791,12 @@ particlesJS('particles-js', {
             enable: true,
             distance: 150,
             color: '#FFD700',
-            opacity: 0.1,
+            opacity: 0.1, // Reduced line opacity
             width: 1
         },
         move: {
             enable: true,
-            speed: 0.5,
+            speed: 0.5, // Reduced speed
             direction: 'none',
             random: true,
             straight: false,
@@ -820,94 +821,71 @@ particlesJS('particles-js', {
                 mode: 'push'
             },
             resize: true
+        },
+        modes: {
+            grab: {
+                distance: 140,
+                line_linked: {
+                    opacity: 0.2
+                }
+            },
+            push: {
+                particles_nb: 2 // Reduced number of particles on click
+            }
         }
     },
     retina_detect: true
 });
 
-// Scroll Progress Bar
-const scrollProgress = document.querySelector('.scroll-progress');
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = (window.scrollY / windowHeight) * 100;
-    scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
+// Add floating animation to cards
+document.querySelectorAll('.feature-card, .tech-card').forEach(card => {
+    card.classList.add('floating');
 });
 
-// Mobile Navigation Toggle
-const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Add shimmer effect to headings
+document.querySelectorAll('h1, h2, h3').forEach(heading => {
+    heading.classList.add('shimmer');
+});
 
-if (mobileNavToggle) {
-    mobileNavToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-}
-
-// Gallery Lightbox
-const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeLightbox = document.getElementById('close-lightbox');
-
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        if (img) {
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
-        }
+// Dynamic Lighting Effect for All Cards
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.glass-card, .feature-card, .tech-card, .showcase-card, .testimonial-card, .case-study-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mouse-x', `${x}%`);
+        card.style.setProperty('--mouse-y', `${y}%`);
     });
 });
 
-if (closeLightbox) {
-    closeLightbox.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+// Motion Parallax Effect
+const parallaxItems = document.querySelectorAll('.parallax-item');
+document.addEventListener('mousemove', (e) => {
+    parallaxItems.forEach(item => {
+        const speed = item.dataset.speed || 0.1;
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+        item.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
-}
-
-// Lazy Loading Images
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
 });
 
-// Form Validation
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form validation and submission logic here
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
+// Enhanced GSAP Animations for All Cards
+gsap.to('.glass-card, .feature-card, .tech-card, .showcase-card, .testimonial-card, .case-study-card', {
+    scrollTrigger: {
+        trigger: '.glass-card, .feature-card, .tech-card, .showcase-card, .testimonial-card, .case-study-card',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+    },
+    boxShadow: '0 8px 32px 0 rgba(255, 215, 0, 0.2)',
+    duration: 1,
+    ease: 'power2.out'
+});
 
-// Intersection Observer for Fade-in Animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in-section').forEach(section => {
-    observer.observe(section);
+// Shiny Gold Gradient Animation
+gsap.to('.gold-gradient', {
+    backgroundPosition: '200% 200%',
+    duration: 3,
+    repeat: -1,
+    ease: 'none'
 }); 
