@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Smart Vacuum Cleaner Robot - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white animated-gradient">
+    <div class="scroll-progress"></div>
+    <div id="particles-js"></div>
+    <div class="tech-icons-bg">
+        <i class="fas fa-microchip tech-icon" style="left: 5%; animation-delay: 0s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 25%; animation-delay: 2s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 45%; animation-delay: 4s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 65%; animation-delay: 6s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 85%; animation-delay: 8s;"></i>
+        
+        <i class="fas fa-robot tech-icon" style="left: 15%; animation-delay: 1s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 35%; animation-delay: 3s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 55%; animation-delay: 5s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 75%; animation-delay: 7s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 95%; animation-delay: 9s;"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md light-effect">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-gold">Arduino Robot</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-gold">Home</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold">Gallery</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold">Technical</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold">Roadmap</a>
+                    <a href="contact.html" class="text-gold hover:text-gold/80 font-bold">Contact</a>
+                    <a href="https://github.com/madhur24013" target="_blank" class="text-gray-300 hover:text-gold">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gold">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-lg">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="../index.html" class="text-gray-300 hover:text-gold transition-colors">Home</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold transition-colors">Gallery</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold transition-colors">Technical</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold transition-colors">Roadmap</a>
+                    <a href="contact.html" class="text-gold transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact with Us Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gold">Let's Connect</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-gold">Send a Message</h3>
+                    <p class="text-gray-300 mb-6">Have questions about the project or interested in collaboration? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.</p>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-black/50 border border-gold/30 rounded-lg focus:outline-none focus:border-gold text-white transition-colors">
+                            <p class="text-red-500 text-sm mt-1 hidden" id="name-error">Please enter your name</p>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-black/50 border border-gold/30 rounded-lg focus:outline-none focus:border-gold text-white transition-colors">
+                            <p class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email address</p>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-black/50 border border-gold/30 rounded-lg focus:outline-none focus:border-gold text-white transition-colors">
+                            <p class="text-red-500 text-sm mt-1 hidden" id="subject-error">Please enter a subject</p>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-black/50 border border-gold/30 rounded-lg focus:outline-none focus:border-gold text-white transition-colors"></textarea>
+                            <p class="text-red-500 text-sm mt-1 hidden" id="message-error">Please enter your message</p>
+                        </div>
+                        <button type="submit" class="w-full cta-button relative overflow-hidden group">
+                            <span class="relative z-10">Send Message</span>
+                            <div class="absolute inset-0 bg-gold/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                        </button>
+                    </form>
+                </div>
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-gold">Contact Information</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gold mb-1">Email</h4>
+                                <a href="mailto:haryanmadhur@gmail.com" class="text-gray-300 hover:text-gold transition-colors">haryanmadhur@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gold mb-1">Phone</h4>
+                                <a href="tel:+918999500841" class="text-gray-300 hover:text-gold transition-colors">+91 8999500841</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gold mb-1">Location</h4>
+                                <p class="text-gray-300">Mumbai, Maharashtra</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gold mb-1">Response Time</h4>
+                                <p class="text-gray-300">Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-gold/20">
+                        <h4 class="text-lg font-semibold text-gold mb-4">Connect on Social Media</h4>
+                        <div class="flex space-x-6">
+                            <a href="https://github.com/madhur-haryan" target="_blank" class="social-link">
+                                <i class="fab fa-github text-2xl text-gold hover:text-gold/80 transition-colors"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/madhur-haryan" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin text-2xl text-gold hover:text-gold/80 transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 bg-black/50 backdrop-blur-lg relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold fade-in">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">How does the advanced obstacle detection system work?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The robot employs a sophisticated multi-sensor fusion system combining ultrasonic sensors, infrared detectors, and bump sensors. The ultrasonic sensors emit 40kHz sound waves and calculate distances using time-of-flight measurements.</p>
+                            <p class="text-gray-400">Our advanced obstacle detection system uses a combination of multiple sensors to ensure reliable detection and avoidance of obstacles. The system continuously scans the environment and makes real-time decisions to prevent collisions.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Ultrasonic Sensors</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>40kHz frequency</li>
+                                        <li>2cm-400cm range</li>
+                                        <li>360° coverage</li>
+                                        <li>Real-time updates</li>
+                                        <li>Multiple sensor fusion</li>
+                                        <li>Environmental adaptation</li>
+                                        <li>Noise filtering</li>
+                                        <li>Calibration system</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">The ultrasonic sensors provide accurate distance measurements and are particularly effective for detecting solid obstacles and walls.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Infrared Sensors</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Enhanced depth perception</li>
+                                        <li>Low-light operation</li>
+                                        <li>Color detection</li>
+                                        <li>Obstacle classification</li>
+                                        <li>Heat signature detection</li>
+                                        <li>Reflective surface handling</li>
+                                        <li>Multi-angle scanning</li>
+                                        <li>Dynamic sensitivity</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Infrared sensors complement the ultrasonic system by providing additional depth information and working effectively in various lighting conditions.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Safety Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Emergency stop system</li>
+                                    <li>Collision prevention</li>
+                                    <li>Dynamic speed adjustment</li>
+                                    <li>Obstacle memory mapping</li>
+                                    <li>Predictive avoidance</li>
+                                    <li>Height detection</li>
+                                    <li>Stair detection</li>
+                                    <li>Pet safety mode</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Our comprehensive safety system ensures the robot operates safely around people, pets, and furniture while maintaining efficient cleaning performance.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Advanced Algorithms</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Machine learning integration</li>
+                                    <li>Pattern recognition</li>
+                                    <li>Predictive modeling</li>
+                                    <li>Adaptive thresholds</li>
+                                    <li>Environmental mapping</li>
+                                    <li>Dynamic obstacle tracking</li>
+                                    <li>Multi-sensor fusion</li>
+                                    <li>Real-time optimization</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">The advanced algorithms process sensor data in real-time to make intelligent decisions about navigation and obstacle avoidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">What are the power management and battery specifications?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The robot features a 7.4V 5000mAh Li-ion battery pack with advanced power management and smart charging capabilities. The system includes comprehensive battery health monitoring and optimization features.</p>
+                            <p class="text-gray-400">Our power management system ensures efficient energy usage while maintaining optimal performance. The smart charging system automatically adjusts charging parameters based on battery condition and usage patterns.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Battery Specs</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>7.4V Li-ion battery</li>
+                                        <li>5000mAh capacity</li>
+                                        <li>4 hours runtime</li>
+                                        <li>Fast charging support</li>
+                                        <li>Smart charging system</li>
+                                        <li>Temperature control</li>
+                                        <li>Overcharge protection</li>
+                                        <li>Battery health monitoring</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">The high-capacity Li-ion battery provides extended runtime while maintaining stable power output throughout the cleaning cycle.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Power Features</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Smart charging</li>
+                                        <li>Health monitoring</li>
+                                        <li>Auto-docking</li>
+                                        <li>Power optimization</li>
+                                        <li>Sleep mode</li>
+                                        <li>Power scheduling</li>
+                                        <li>Battery calibration</li>
+                                        <li>Energy efficiency</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Advanced power management features ensure optimal battery life and efficient energy usage during operation.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Power Management System</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Temperature monitoring</li>
+                                    <li>Overcharge protection</li>
+                                    <li>Battery health tracking</li>
+                                    <li>Power consumption optimization</li>
+                                    <li>Dynamic power allocation</li>
+                                    <li>Load balancing</li>
+                                    <li>Emergency power reserve</li>
+                                    <li>Power usage analytics</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">The power management system continuously monitors and optimizes power usage to ensure reliable operation and extend battery life.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Charging Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Auto-docking system</li>
+                                    <li>Smart charging algorithm</li>
+                                    <li>Charging status display</li>
+                                    <li>Charging time optimization</li>
+                                    <li>Battery conditioning</li>
+                                    <li>Charging safety protocols</li>
+                                    <li>Wireless charging option</li>
+                                    <li>Charging station detection</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">The smart charging system automatically manages the charging process to maintain battery health and ensure optimal performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">How does the intelligent navigation system work?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The navigation system implements a hybrid approach combining SLAM (Simultaneous Localization and Mapping) with advanced path optimization algorithms. This enables the robot to create detailed maps of your home and navigate efficiently.</p>
+                            <p class="text-gray-400">Our intelligent navigation system uses advanced algorithms to create and maintain accurate maps of your home, ensuring thorough cleaning coverage while avoiding obstacles and optimizing cleaning patterns.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">SLAM Technology</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Real-time mapping</li>
+                                        <li>Position tracking</li>
+                                        <li>Path optimization</li>
+                                        <li>Room recognition</li>
+                                        <li>3D environment mapping</li>
+                                        <li>Dynamic obstacle tracking</li>
+                                        <li>Map updating</li>
+                                        <li>Localization accuracy</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">SLAM technology enables the robot to build and maintain accurate maps of your home while precisely tracking its position within the environment.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Smart Features</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Pattern recognition</li>
+                                        <li>Adaptive speed</li>
+                                        <li>Memory mapping</li>
+                                        <li>Efficient routing</li>
+                                        <li>Virtual wall creation</li>
+                                        <li>Multi-room navigation</li>
+                                        <li>Schedule-based cleaning</li>
+                                        <li>Area prioritization</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Smart navigation features ensure efficient cleaning patterns and adapt to your home's layout and cleaning preferences.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Navigation Algorithms</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Path planning optimization</li>
+                                    <li>Obstacle avoidance</li>
+                                    <li>Coverage optimization</li>
+                                    <li>Dynamic route adjustment</li>
+                                    <li>Dead-end detection</li>
+                                    <li>Loop closure</li>
+                                    <li>Path smoothing</li>
+                                    <li>Energy-efficient routing</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Advanced navigation algorithms ensure efficient path planning and obstacle avoidance while maximizing cleaning coverage.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Advanced Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Multi-floor mapping</li>
+                                    <li>Virtual boundaries</li>
+                                    <li>No-go zones</li>
+                                    <li>Room-specific cleaning</li>
+                                    <li>Spot cleaning mode</li>
+                                    <li>Edge cleaning mode</li>
+                                    <li>Manual control option</li>
+                                    <li>Remote monitoring</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Additional navigation features provide flexibility and control over the cleaning process, allowing customization to your specific needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">What are the safety features and protocols?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The robot implements multiple safety layers to ensure reliable operation and protect both the device and its surroundings. Our comprehensive safety system includes hardware and software protections.</p>
+                            <p class="text-gray-400">Our multi-layered safety system ensures the robot operates safely in your home, protecting both the device and your family while maintaining efficient cleaning performance.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Hardware Safety</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Emergency stop</li>
+                                        <li>Overcurrent protection</li>
+                                        <li>Temperature monitoring</li>
+                                        <li>Battery protection</li>
+                                        <li>Bump sensors</li>
+                                        <li>Drop detection</li>
+                                        <li>Overheating protection</li>
+                                        <li>Short circuit protection</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Hardware safety features provide physical protection mechanisms to prevent accidents and ensure safe operation.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Software Safety</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Anti-tip sensors</li>
+                                        <li>Child safety mode</li>
+                                        <li>Pet detection</li>
+                                        <li>Fall prevention</li>
+                                        <li>Boundary detection</li>
+                                        <li>Speed control</li>
+                                        <li>Error recovery</li>
+                                        <li>System diagnostics</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Software safety features provide intelligent protection through advanced algorithms and monitoring systems.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Safety Protocols</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Automatic shutdown</li>
+                                    <li>Error recovery</li>
+                                    <li>Safety zone creation</li>
+                                    <li>Remote monitoring</li>
+                                    <li>Emergency alerts</li>
+                                    <li>Self-diagnosis</li>
+                                    <li>Firmware updates</li>
+                                    <li>Data protection</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Comprehensive safety protocols ensure the robot responds appropriately to various situations and maintains safe operation.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">User Safety Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Child lock system</li>
+                                    <li>Pet-friendly mode</li>
+                                    <li>Schedule-based operation</li>
+                                    <li>Remote control override</li>
+                                    <li>Voice command support</li>
+                                    <li>App-based monitoring</li>
+                                    <li>Emergency stop button</li>
+                                    <li>Safety notifications</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">User safety features provide additional control and monitoring options to ensure safe operation around children and pets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">How does the cleaning system work?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The cleaning system features advanced mechanisms for efficient cleaning, combining powerful suction with intelligent brush systems and smart filtration. The system adapts to different floor types and cleaning requirements.</p>
+                            <p class="text-gray-400">Our advanced cleaning system uses a combination of powerful suction, intelligent brush systems, and smart filtration to ensure thorough cleaning of all floor types while maintaining optimal performance.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Cleaning Mechanism</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Dual brush system</li>
+                                        <li>Adjustable suction</li>
+                                        <li>HEPA filtration</li>
+                                        <li>Edge cleaning</li>
+                                        <li>Multi-surface cleaning</li>
+                                        <li>Dirt detection</li>
+                                        <li>Variable power modes</li>
+                                        <li>Smart brush control</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">The dual brush system and adjustable suction provide powerful cleaning performance while protecting your floors.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Maintenance</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Dustbin monitoring</li>
+                                        <li>Self-cleaning</li>
+                                        <li>Filter alerts</li>
+                                        <li>Brush maintenance</li>
+                                        <li>Filter replacement</li>
+                                        <li>Brush cleaning</li>
+                                        <li>Dustbin emptying</li>
+                                        <li>System diagnostics</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Regular maintenance features ensure optimal cleaning performance and extend the life of your robot.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Cleaning Modes</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Auto mode</li>
+                                    <li>Spot cleaning</li>
+                                    <li>Edge cleaning</li>
+                                    <li>Schedule cleaning</li>
+                                    <li>Deep cleaning</li>
+                                    <li>Quick clean</li>
+                                    <li>Room-specific cleaning</li>
+                                    <li>Custom cleaning patterns</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Multiple cleaning modes allow you to customize the cleaning process based on your specific needs and preferences.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Advanced Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Dirt level detection</li>
+                                    <li>Surface type recognition</li>
+                                    <li>Adaptive power control</li>
+                                    <li>Multi-pass cleaning</li>
+                                    <li>Area coverage tracking</li>
+                                    <li>Cleaning history</li>
+                                    <li>Performance analytics</li>
+                                    <li>Smart scheduling</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Advanced features ensure thorough cleaning by adapting to different surfaces and tracking cleaning performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">What are the maintenance requirements?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">Regular maintenance ensures optimal performance and longevity of the robot. Our comprehensive maintenance schedule includes daily, weekly, and monthly tasks to keep your robot in peak condition.</p>
+                            <p class="text-gray-400">Following our maintenance schedule will help maintain optimal performance and extend the life of your robot. Each maintenance task is designed to ensure reliable operation and prevent potential issues.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Daily Maintenance</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Dustbin emptying</li>
+                                        <li>Brush cleaning</li>
+                                        <li>Filter inspection</li>
+                                        <li>Battery charging</li>
+                                        <li>Wheel cleaning</li>
+                                        <li>Sensor cleaning</li>
+                                        <li>Exterior cleaning</li>
+                                        <li>Performance check</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Daily maintenance tasks ensure your robot is ready for optimal performance and prevent debris buildup.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Weekly Tasks</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Deep cleaning</li>
+                                        <li>Sensor calibration</li>
+                                        <li>Software updates</li>
+                                        <li>Performance check</li>
+                                        <li>Filter cleaning</li>
+                                        <li>Brush inspection</li>
+                                        <li>Battery check</li>
+                                        <li>System diagnostics</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Weekly maintenance ensures all systems are properly calibrated and functioning correctly.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Monthly Maintenance</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Battery health check</li>
+                                    <li>Motor inspection</li>
+                                    <li>Circuit board check</li>
+                                    <li>Full system test</li>
+                                    <li>Filter replacement</li>
+                                    <li>Brush replacement</li>
+                                    <li>Wheel inspection</li>
+                                    <li>Software optimization</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Monthly maintenance tasks focus on component inspection and replacement to ensure long-term reliability.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Maintenance Tools</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Cleaning brush set</li>
+                                    <li>Filter replacement kit</li>
+                                    <li>Battery maintenance kit</li>
+                                    <li>Sensor cleaning tools</li>
+                                    <li>Wheel maintenance kit</li>
+                                    <li>Diagnostic tools</li>
+                                    <li>Calibration kit</li>
+                                    <li>Spare parts set</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Essential maintenance tools are included to help you perform routine maintenance tasks effectively.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">What are the technical specifications?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">The robot is built with high-quality components for reliable performance.</p>
+                            <p class="text-gray-400">Our robot features state-of-the-art components and specifications designed to provide optimal cleaning performance and reliability.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Hardware Specs</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>Arduino Uno R3</li>
+                                        <li>L298N Motor Driver</li>
+                                        <li>HC-SR04 Sensors</li>
+                                        <li>12V DC Motors</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">High-quality hardware components ensure reliable performance and precise control of the robot's movements.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Performance</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>4 hours runtime</li>
+                                        <li>360° coverage</li>
+                                        <li>Auto-docking</li>
+                                        <li>Smart charging</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Optimized performance specifications ensure efficient cleaning coverage and reliable operation.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Dimensions & Weight</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>30cm diameter</li>
+                                    <li>8cm height</li>
+                                    <li>2.5kg weight</li>
+                                    <li>Compact design</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Compact dimensions and lightweight design allow the robot to navigate easily under furniture and in tight spaces.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Additional Features</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>WiFi connectivity</li>
+                                    <li>Mobile app control</li>
+                                    <li>Voice commands</li>
+                                    <li>Remote monitoring</li>
+                                    <li>Smart scheduling</li>
+                                    <li>Performance tracking</li>
+                                    <li>Firmware updates</li>
+                                    <li>Data analytics</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Modern connectivity features provide convenient control and monitoring options for your robot.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item glass-card p-6">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <h3 class="text-xl font-semibold text-gold">What are the warranty and support options?</h3>
+                        <i class="fas fa-chevron-down text-gold"></i>
+                    </div>
+                    <div class="mt-4 text-gray-300">
+                        <div class="space-y-4">
+                            <p class="text-lg">We provide comprehensive warranty and support services for your robot.</p>
+                            <p class="text-gray-400">Our warranty and support services are designed to ensure your complete satisfaction and provide peace of mind with your investment.</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Warranty Coverage</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>1 year warranty</li>
+                                        <li>Parts replacement</li>
+                                        <li>Technical support</li>
+                                        <li>Software updates</li>
+                                        <li>Battery coverage</li>
+                                        <li>Motor protection</li>
+                                        <li>Sensor warranty</li>
+                                        <li>Circuit board coverage</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Comprehensive warranty coverage protects your investment and ensures reliable operation.</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded-lg">
+                                    <h4 class="text-gold font-semibold mb-2">Support Services</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>24/7 assistance</li>
+                                        <li>Remote diagnostics</li>
+                                        <li>Repair services</li>
+                                        <li>Training sessions</li>
+                                        <li>Technical guidance</li>
+                                        <li>Firmware support</li>
+                                        <li>Parts replacement</li>
+                                        <li>Maintenance support</li>
+                                    </ul>
+                                    <p class="text-sm text-gray-400 mt-2">Dedicated support services ensure you receive help whenever you need it.</p>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Additional Benefits</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Extended warranty options</li>
+                                    <li>Priority support</li>
+                                    <li>Regular maintenance</li>
+                                    <li>Upgrade services</li>
+                                    <li>Discount on parts</li>
+                                    <li>Free shipping</li>
+                                    <li>Expert consultation</li>
+                                    <li>Community access</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Additional benefits provide extra value and support for your robot ownership experience.</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded-lg mt-4">
+                                <h4 class="text-gold font-semibold mb-2">Support Channels</h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>Phone support</li>
+                                    <li>Email assistance</li>
+                                    <li>Live chat</li>
+                                    <li>Video tutorials</li>
+                                    <li>User guides</li>
+                                    <li>FAQ database</li>
+                                    <li>Community forums</li>
+                                    <li>Social media support</li>
+                                </ul>
+                                <p class="text-sm text-gray-400 mt-2">Multiple support channels ensure you can get help through your preferred method.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gold/20 hover:bg-gold/30 text-gold p-3 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 opacity-0 invisible hover:scale-110">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 backdrop-blur-md relative light-effect">
+        <div class="text-center text-gray-400">
+            <div class="flex justify-center space-x-4 mb-2">
+                <a href="https://github.com/madhur24013" target="_blank" class="text-gray-400 hover:text-gold transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+            <p class="copyright-text">© 2024 Smart Vacuum. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.flex');
+            const answer = item.querySelector('.mt-4');
+            const icon = item.querySelector('.fa-chevron-down');
+            
+            // Initially hide all answers
+            answer.style.display = 'none';
+            
+            question.addEventListener('click', () => {
+                // Toggle current answer
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                
+                // Rotate icon
+                icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+                
+                // Add smooth transition
+                answer.style.transition = 'all 0.3s ease-in-out';
+                icon.style.transition = 'transform 0.3s ease-in-out';
+            });
+        });
+    </script>
+</body>
+</html> 

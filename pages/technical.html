@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Smart Vacuum Cleaner Robot - Technical</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white animated-gradient">
+    <div class="scroll-progress"></div>
+    <div id="particles-js"></div>
+    <div class="tech-icons-bg">
+        <i class="fas fa-microchip tech-icon" style="left: 5%; animation-delay: 0s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 25%; animation-delay: 2s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 45%; animation-delay: 4s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 65%; animation-delay: 6s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 85%; animation-delay: 8s;"></i>
+        
+        <i class="fas fa-robot tech-icon" style="left: 15%; animation-delay: 1s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 35%; animation-delay: 3s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 55%; animation-delay: 5s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 75%; animation-delay: 7s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 95%; animation-delay: 9s;"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md light-effect">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-2xl font-bold text-gold">Smart Vacuum</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-gold">Home</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold">Gallery</a>
+                    <a href="technical.html" class="text-gold hover:text-gold/80 font-bold">Technical</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold">Roadmap</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-gold">Contact</a>
+                    <a href="https://github.com/madhur24013" target="_blank" class="text-gray-300 hover:text-gold">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                <button class="md:hidden text-gold" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="py-4 space-y-4">
+                <a href="../index.html" class="block text-gray-300 hover:text-gold">Home</a>
+                <a href="gallery.html" class="block text-gray-300 hover:text-gold">Gallery</a>
+                <a href="technical.html" class="block text-gold font-bold">Technical</a>
+                <a href="about.html" class="block text-gray-300 hover:text-gold">Roadmap</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Files Section -->
+    <section class="py-20 bg-black/50 backdrop-blur-lg relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold fade-in">Project Files</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-card p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Source Code -->
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-code text-gold text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-semibold text-gold">Source Code</h3>
+                                    <p class="text-gray-400">Arduino IDE Files</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Main program (.ino)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Library dependencies</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Configuration files</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Custom libraries</span>
+                                </li>
+                            </ul>
+                            <a href="source-code.html" class="inline-block mt-4 text-gold hover:text-gold/80">
+                                Download Source Code <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+
+                        <!-- Documentation -->
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-book text-gold text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-xl font-semibold text-gold">Documentation</h3>
+                                    <p class="text-gray-400">Technical Guides</p>
+                                </div>
+                            </div>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>User manual</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Technical specifications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Assembly guide</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Troubleshooting guide</span>
+                                </li>
+                            </ul>
+                            <a href="documentation.html" class="inline-block mt-4 text-gold hover:text-gold/80">
+                                View Documentation <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section class="py-20 bg-black/50 backdrop-blur-lg relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold fade-in">Technical Specifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Hardware Components -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-microchip text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">Hardware Components</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Arduino Uno R3
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            HC-SR04 Ultrasonic Sensors
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            L298N Motor Driver
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            DC Motors (2x)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Vacuum Fan Motor
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Software Components -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-code text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">Software Components</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Arduino IDE
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            C++ Programming
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Custom Libraries
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-star text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">Key Features</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Autonomous Navigation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Obstacle Detection
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Efficient Cleaning Pattern
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Battery Management
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Interactive Timeline Section -->
+    <section class="py-16 relative light-effect">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-12">Development Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <!-- Phase 1: Planning -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot animate-pulse"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                            <h3 class="text-xl font-bold text-gold">Phase 1: Planning</h3>
+                                <span class="timeline-date">January 2024</span>
+                            </div>
+                            <p class="text-gray-300">Project initialization and requirements gathering</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-400">
+                                <li class="timeline-list-item">Research and analysis</li>
+                                <li class="timeline-list-item">Component selection</li>
+                                <li class="timeline-list-item">Design planning</li>
+                            </ul>
+                            <div class="timeline-progress">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Hardware -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot animate-pulse"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                            <h3 class="text-xl font-bold text-gold">Phase 2: Hardware</h3>
+                                <span class="timeline-date">February 2024</span>
+                            </div>
+                            <p class="text-gray-300">Hardware assembly and testing</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-400">
+                                <li class="timeline-list-item">Circuit assembly</li>
+                                <li class="timeline-list-item">Sensor integration</li>
+                                <li class="timeline-list-item">Motor setup</li>
+                            </ul>
+                            <div class="timeline-progress">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3: Software -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot animate-pulse"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                            <h3 class="text-xl font-bold text-gold">Phase 3: Software</h3>
+                                <span class="timeline-date">March 2024</span>
+                            </div>
+                            <p class="text-gray-300">Programming and algorithm development</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-400">
+                                <li class="timeline-list-item">Navigation algorithms</li>
+                                <li class="timeline-list-item">Obstacle detection</li>
+                                <li class="timeline-list-item">Control systems</li>
+                            </ul>
+                            <div class="timeline-progress">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4: Testing -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot animate-pulse"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                            <h3 class="text-xl font-bold text-gold">Phase 4: Testing</h3>
+                                <span class="timeline-date">April 2024</span>
+                            </div>
+                            <p class="text-gray-300">System testing and optimization</p>
+                            <ul class="list-disc list-inside mt-2 text-gray-400">
+                                <li class="timeline-list-item">Performance testing</li>
+                                <li class="timeline-list-item">Bug fixing</li>
+                                <li class="timeline-list-item">Optimization</li>
+                            </ul>
+                            <div class="timeline-progress">
+                                <div class="progress-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Circuit Diagram -->
+    <section class="py-16 relative light-effect">
+            <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Circuit Diagram</h2>
+            <img src="../assets/images/circuit-diagram.png" alt="Circuit Diagram" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                        </div>
+    </section>
+
+    <!-- 3D Robot Circuit -->
+    <section class="py-16 relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">3D Robot Circuit</h2>
+            <img src="../assets/images/robot-circuit-3d.png" alt="3D Robot Circuit" class="w-full h-64 object-cover rounded-lg shadow-lg">
+            </div>
+        </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gold/20 hover:bg-gold/30 text-gold p-3 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 opacity-0 invisible hover:scale-110">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 backdrop-blur-md relative light-effect">
+        <div class="text-center text-gray-400">
+            <div class="flex justify-center space-x-4 mb-2">
+                <a href="https://github.com/madhur24013" target="_blank" class="text-gray-400 hover:text-gold transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
+            <p class="copyright-text">© 2024 Smart Vacuum. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

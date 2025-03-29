@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation - Arduino Smart Vacuum Cleaner Robot</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+                    <i class="fas fa-robot mr-2"></i>Smart Vacuum Robot
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gold hover:text-gold/80">Home</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold">Gallery</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold">Technical</a>
+                    <a href="about.html" class="text-gray-300 hover:text-gold">Roadmap</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-gold">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-800/50 backdrop-blur-md rounded-xl p-8 shadow-xl border border-gray-700">
+                    <h1 class="text-3xl font-bold text-white mb-6 text-center">Project Documentation</h1>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gray-700/30 rounded-lg p-6">
+                            <h2 class="text-xl font-semibold text-white mb-4">Complete Project Documentation</h2>
+                            <p class="text-gray-300 mb-4">Download the full project documentation in PDF format, including all technical details, implementation guides, and testing procedures.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
+                                    <div>
+                                        <p class="text-white font-medium">madhur.blackbook-1.pdf</p>
+                                        <p class="text-gray-400 text-sm">Last updated: March 2024</p>
+                                    </div>
+                                </div>
+                                <a href="../docs/madhur.blackbook-1.pdf" class="cta-button bg-gold text-black hover:bg-gold/90 inline-flex items-center" download>
+                                    <i class="fas fa-download"></i>
+                                    <span>Download PDF</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-700/30 rounded-lg p-6">
+                            <h2 class="text-xl font-semibold text-white mb-4">Documentation Contents</h2>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    <span>Project Overview and Objectives</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    <span>Technical Specifications</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    <span>Implementation Details</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    <span>Testing Procedures</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    <span>User Guide and Manual</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gold/20 hover:bg-gold/30 text-gold p-3 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 opacity-0 invisible hover:scale-110">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 backdrop-blur-md border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2024 Arduino Smart Vacuum Cleaner Robot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

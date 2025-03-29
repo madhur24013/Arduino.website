@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Smart Vacuum Cleaner Robot - Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-900 text-white animated-gradient">
+    <!-- Add this right after the opening body tag -->
+    <div class="scroll-progress"></div>
+    <div id="particles-js"></div>
+    <div class="tech-icons-bg">
+        <!-- Core Technology Icons -->
+        <i class="fas fa-microchip tech-icon" style="left: 10%; animation-delay: 0s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 30%; animation-delay: 2s;"></i>
+        <i class="fas fa-code tech-icon" style="left: 50%; animation-delay: 4s;"></i>
+        <i class="fas fa-microchip tech-icon" style="left: 70%; animation-delay: 6s;"></i>
+        <i class="fas fa-robot tech-icon" style="left: 90%; animation-delay: 8s;"></i>
+        
+        <!-- Hardware Components -->
+        <i class="fas fa-bolt tech-icon" style="left: 20%; animation-delay: 1s;"></i>
+        <i class="fas fa-battery-full tech-icon" style="left: 40%; animation-delay: 3s;"></i>
+        <i class="fas fa-radar tech-icon" style="left: 60%; animation-delay: 5s;"></i>
+        <i class="fas fa-bolt tech-icon" style="left: 80%; animation-delay: 7s;"></i>
+        
+        <!-- Smart Features -->
+        <i class="fas fa-brain tech-icon" style="left: 15%; animation-delay: 2.5s;"></i>
+        <i class="fas fa-camera tech-icon" style="left: 35%; animation-delay: 4.5s;"></i>
+        <i class="fas fa-brain tech-icon" style="left: 55%; animation-delay: 6.5s;"></i>
+        <i class="fas fa-camera tech-icon" style="left: 75%; animation-delay: 8.5s;"></i>
+        
+        <!-- Navigation -->
+        <i class="fas fa-compass tech-icon" style="left: 25%; animation-delay: 3s;"></i>
+        <i class="fas fa-map-marker-alt tech-icon" style="left: 45%; animation-delay: 5s;"></i>
+        <i class="fas fa-compass tech-icon" style="left: 65%; animation-delay: 7s;"></i>
+        <i class="fas fa-map-marker-alt tech-icon" style="left: 85%; animation-delay: 9s;"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md light-effect">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-2xl font-bold text-gold">Smart Vacuum</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-gold">Home</a>
+                    <a href="gallery.html" class="text-gray-300 hover:text-gold">Gallery</a>
+                    <a href="technical.html" class="text-gray-300 hover:text-gold">Technical</a>
+                    <a href="about.html" class="text-gold hover:text-gold/80 font-bold">Roadmap</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-gold">Contact</a>
+                    <a href="https://github.com/madhur24013" target="_blank" class="text-gray-300 hover:text-gold">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                <button class="md:hidden text-gold" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="py-4 space-y-4">
+                <a href="../index.html" class="block text-gray-300 hover:text-gold">Home</a>
+                <a href="gallery.html" class="block text-gray-300 hover:text-gold">Gallery</a>
+                <a href="technical.html" class="block text-gray-300 hover:text-gold">Technical</a>
+                <a href="about.html" class="block text-gold font-bold">Roadmap</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Roadmap Section -->
+    <section class="py-20 bg-black/50 backdrop-blur-lg relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold fade-in">Project Roadmap</h2>
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Phase 1: Planning -->
+                <div class="glass-card p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-lightbulb text-gold text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-semibold text-gold">Phase 1: Planning & Research</h3>
+                            <p class="text-gray-400">January 2024</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-tasks mr-2"></i>
+                                Project Initialization
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Requirements analysis and documentation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>System architecture design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Performance metrics definition</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Resource allocation planning</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-microchip mr-2"></i>
+                                Component Selection
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Microcontroller evaluation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Sensor suite selection</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Motor and drive system analysis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Power management components</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Hardware -->
+                <div class="glass-card p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-microchip text-gold text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-semibold text-gold">Phase 2: Hardware Development</h3>
+                            <p class="text-gray-400">February 2024</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-circuit-board mr-2"></i>
+                                Circuit Assembly
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>PCB design and fabrication</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Component integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Power distribution system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Signal conditioning circuits</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-radar mr-2"></i>
+                                Sensor Integration
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Ultrasonic sensor array setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Infrared detection system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>IMU calibration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Encoder implementation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Software -->
+                <div class="glass-card p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-code text-gold text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-semibold text-gold">Phase 3: Software Development</h3>
+                            <p class="text-gray-400">March 2024</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-brain mr-2"></i>
+                                Core Algorithms
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>SLAM implementation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Path planning optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Obstacle avoidance system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Sensor fusion algorithms</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-sliders-h mr-2"></i>
+                                Control Systems
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>PID controller tuning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Motor control algorithms</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Battery management system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Safety protocols implementation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Testing -->
+                <div class="glass-card p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-gold/30 to-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-vial text-gold text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-semibold text-gold">Phase 4: Testing & Optimization</h3>
+                            <p class="text-gray-400">April 2024</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                System Testing
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Performance benchmarking</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Stress testing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Environmental testing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Battery life optimization</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-black/30 p-6 rounded-lg border border-gold/10">
+                            <h4 class="text-gold font-semibold mb-4 flex items-center">
+                                <i class="fas fa-tachometer-alt mr-2"></i>
+                                Final Optimization
+                            </h4>
+                            <ul class="text-sm space-y-3">
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Code optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Power efficiency tuning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>Response time improvement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-gold mr-2">•</span>
+                                    <span>User experience refinement</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements -->
+    <section class="py-16 relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Future Enhancements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- AI Integration -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-brain text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">AI Integration</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Machine Learning for Navigation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Pattern Recognition
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Adaptive Cleaning Algorithms
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Smart Features -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">Smart Features</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Mobile App Integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Bluetooth Connectivity
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Smart Scheduling
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Advanced Sensors -->
+                <div class="glass-card p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-radar text-4xl text-gold mb-2"></i>
+                        <h3 class="text-xl font-semibold text-gold">Advanced Sensors</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            LiDAR Integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Environmental Sensors
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gold mr-2"></i>
+                            Advanced Mapping
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Case Study -->
+    <section id="case-study" class="py-20 bg-black/50 backdrop-blur-lg relative light-effect">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gold">Project Case Study</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gold">Challenges & Solutions</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 1: Obstacle Detection</h4>
+                            <p class="text-gray-300">Implementing reliable obstacle detection in various lighting conditions and with different types of obstacles.</p>
+                            <p class="text-gray-300 mt-2">Solution: Combined multiple ultrasonic sensors with advanced filtering algorithms to improve detection accuracy.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 2: Battery Life</h4>
+                            <p class="text-gray-300">Optimizing power consumption while maintaining cleaning efficiency.</p>
+                            <p class="text-gray-300 mt-2">Solution: Implemented smart power management system and efficient cleaning patterns.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gold mb-2">Challenge 3: Smart Navigation</h4>
+                            <p class="text-gray-300">Developing efficient navigation patterns for optimal room coverage.</p>
+                            <p class="text-gray-300 mt-2">Solution: Implemented advanced path planning algorithms and room mapping techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-gold/20 hover:bg-gold/30 text-gold p-3 rounded-full shadow-lg backdrop-blur-sm transform transition-all duration-300 opacity-0 invisible hover:scale-110">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <main>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 backdrop-blur-md relative light-effect">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-gold">Home</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-gold">Gallery</a></li>
+                        <li><a href="technical.html" class="text-gray-300 hover:text-gold">Technical</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-gold">Roadmap</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://github.com/madhur-haryan" target="_blank" class="text-gray-300 hover:text-gold"><i class="fab fa-github mr-2"></i>GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/madhur-haryan" target="_blank" class="text-gray-300 hover:text-gold"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
+                        <li><a href="mailto:haryanmadhur@gmail.com" class="text-gray-300 hover:text-gold"><i class="fas fa-envelope mr-2"></i>Email</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="documentation.html" class="text-gray-300 hover:text-gold"><i class="fas fa-file-alt mr-2"></i>Documentation</a></li>
+                        <li><a href="source-code.html" class="text-gray-300 hover:text-gold"><i class="fas fa-code mr-2"></i>Source Code</a></li>
+                        <li><a href="Arduino_Smart_Vacuum_Cleaner_Manual.pdf" class="text-gray-300 hover:text-gold" download><i class="fas fa-book mr-2"></i>User Manual</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <div class="flex justify-center space-x-4 mb-2">
+                    <a href="https://github.com/madhur24013" target="_blank" class="text-gray-400 hover:text-gold transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                <p class="copyright-text">© 2024 Smart Vacuum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Back to Top Button Functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 
