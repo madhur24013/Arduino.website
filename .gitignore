@@ -11,6 +11,8 @@ Thumbs.db
 # Dependency directories
 node_modules/
 vendor/
+arduino-robot/
+website/
 
 # Environment files
 .env
