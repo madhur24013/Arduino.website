@@ -1732,3 +1732,36 @@ document.querySelectorAll('img').forEach(img => {
     transform: translateY(-1px);
 }
 
+/* Mobile Video Optimization */
+@media (max-width: 768px) {
+    video {
+        max-height: 300px !important;
+        width: 100% !important;
+        object-fit: contain !important;
+    }
+    
+    .aspect-video {
+        aspect-ratio: 16/9;
+        max-height: 300px;
+    }
+}
+
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;
+    border-radius: 0.5rem;
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto;
+}
+

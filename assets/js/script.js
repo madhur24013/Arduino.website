@@ -1174,4 +1174,49 @@ function initTimeline() {
 document.addEventListener('DOMContentLoaded', () => {
     initTimeline();
     // ... existing initialization code ...
+});
+
+// Mobile Video Optimization
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video');
+    
+    videos.forEach(video => {
+        // Handle video loading
+        video.addEventListener('loadedmetadata', function() {
+            // Set initial volume
+            video.volume = 0.7;
+            
+            // Add loading indicator
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'video-loading';
+            loadingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            video.parentNode.appendChild(loadingIndicator);
+        });
+        
+        // Remove loading indicator when video starts playing
+        video.addEventListener('playing', function() {
+            const loadingIndicator = video.parentNode.querySelector('.video-loading');
+            if (loadingIndicator) {
+                loadingIndicator.remove();
+            }
+        });
+        
+        // Handle video errors
+        video.addEventListener('error', function(e) {
+            console.error('Error loading video:', e);
+            const errorMessage = document.createElement('p');
+            errorMessage.className = 'text-red-500 text-center mt-2';
+            errorMessage.textContent = 'Error loading video. Please try again later.';
+            video.parentNode.appendChild(errorMessage);
+        });
+        
+        // Handle mobile playback
+        video.addEventListener('play', function() {
+            // Ensure video is in viewport
+            const rect = video.getBoundingClientRect();
+            if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                video.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
 }); 
